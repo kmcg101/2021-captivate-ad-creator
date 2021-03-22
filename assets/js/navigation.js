@@ -12,9 +12,24 @@ search replace, rename
 1.6 3/4/2021
 Included stock files in app bundle
 
+
+1. GIT initialize for project
+git config --global user.name "Kevin McGurn"
+git config --global user.email "kevin.mcgurn@mac.com"
+git config --global push.default matching
+git config --global alias.co checkout
+git init
+
+2. First commit
+git add .
+git commit -am 'name of commit'
+
+JOIN PROJECT TO GITHUB REPOSITORY
+// this adds a github repository (origin)
 git remote add origin https://github.com/kmcg101/2021-captivate-ad-creator.git
-git branch -M main
-git push -u origin main
+
+// push to current branch
+git push 
 
 */
 
