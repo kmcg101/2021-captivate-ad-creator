@@ -1,0 +1,232 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+#header {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: orange;
+}
+#header2 {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+#breadcrumbs{
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 16px;
+    width: 80%;
+}
+
+#scrollContainer {
+    position: relative;
+    display: flex;
+    justify-content: left;
+    width: 2560px;
+    height: 400px;
+}
+
+.horizontalScroller {
+    width: 640px;
+    height: 100%;
+}
+#statusHolder{
+    padding-left: 10px;
+    padding-top: 10px;
+    height: 300px;
+    width: 100%;
+    display: flex;
+}
+#statusHolder__statusContainer{
+    display: flex;
+    width: 50%;
+    height: 100%
+}
+#statusHolder__checksContainer{
+    width: 50%;
+    height: 100%
+}
+
+#navButtons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#productButtons {
+    position: relative;
+    display: flex;
+    padding: 80px 30px;
+    /* height: 180px; */
+}
+
+#filename {
+    position: relative;
+    display: flex;
+    padding: 80px 10px;
+    color: black;
+    font-weight: bold;
+}
+
+.eORlpButton {
+    width: 280px;
+    height: 280px;
+    border-radius: 10px;
+    font-size: 2.3em;
+}
+
+.showELPDiv {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-around;
+}
+
+.hideELPDiv {
+    display: none;
+}
+
+.elpButton {
+    width: 116px;
+    height: 62px;
+    border-radius: 10px;
+    margin: 5px;
+}
+.elpButton:focus{
+    /* outline: none; */
+}
+
+#fileName__inputArea {
+    width: 60%;
+    height: 30%;
+}
+
+#fileName_textInput {
+    width: 400px;
+    height: 35px;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+#fileName_textInputButton {
+    position: absolute;
+    left: 430px;
+    top: 112px;
+    height: 40px;
+}
+#fileName_removeFolderButton {
+    position: absolute;
+    left: 430px;
+    top: 171px;
+    height: 40px;
+}
+
+#filename__example {
+    margin-top: 10px;
+}
+
+#filename__example_dyn {
+    margin-top: 5px;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+#fileName__statusContainer {
+    height: 320px;
+    display: flex;
+    margin-top: 10px;
+}
+
+#statusHolder__statusContainerL {
+    width: 50%;
+}
+
+#statusHolder__statusContainerR {
+    width: 50%;
+    color: #4A90E2;
+}
+
+.statusHolder__statusLabel {
+    font-size: 18px;
+    font-weight: 200;
+}
+
+.statusHolder__status {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+
+#statusHolder__title {
+    color: #4A4A4A;
+    font-size: 20px;
+}
+
+.statusHolder__errorHolder {
+    font-weight: 200;
+    display: flex;
+    width: 100%;
+    height: 26px;
+    color: #4A4A4A;
+    font-size: 20px;
+    margin-left: 10px;
+}
+.statusHolder__label {
+    font-weight: 600;
+    
+    width: 100%;
+    height: 26px;
+    color: #4A4A4A;
+    font-size: 20px;
+    margin-left: 0px;
+}
+
+.statusHolder__checkHolder {
+    font-weight: bold;
+    color: #417505;
+    font-size: 20px;
+}
+
+.statusHolder__checkHolder::after {
+    content: "√";
+}
+
+.statusHolder__xHolder {
+    font-weight: bold;
+    color: #D0021B;
+    font-size: 20px;
+}
+
+.statusHolder__xHolder::after {
+    content: "x";
+}
+
+#goButton{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    right: 20px;
+    bottom: 60px;
+    background-color: red;
+    color: white;
+    font-size: 30px;
+    font-weight: 800;
+    display: none;
+}
+
+#footer {
+    height: 20px;
+    background-color: orange;
+}

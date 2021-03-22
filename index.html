@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/dropzone.css">
+
+
+</head>
+
+<body>
+    <div id="header">Captivate Ad Builder 1.6000 2021 March 4</div>
+    <div id="header2">
+        <button id='backButton'>Back</button>
+        <div id="breadcrumbs"></div>
+        <button id='fwdButton'>Continue</button>
+    </div>
+    
+    <div id='scrollContainer'>
+        
+        <div id="navButtons" class='horizontalScroller'>
+            <button class='eORlpButton' id='startElevator'>Elevator</button>
+            <button class='eORlpButton'  id='startLandscapePortrait'>Landscape and Portrait</button>
+        </div>
+        <div id="productButtons" class='horizontalScroller'>
+
+            <div id='productButtons__allButtons'>
+                <div id="productButtons__eButtons"></div>
+                <div id="productButtons__lpButtons"></div>
+            </div>
+        </div>
+        <div id="filename" class='horizontalScroller'>
+            
+            <div id=fileName__inputArea>
+                <div id='filename__textLabel'>Filename</div>
+                <input type="text" id="fileName_textInput" name="fname">
+                <button id=fileName_textInputButton>Check filename</button>
+                <button id=fileName_removeFolderButton>Remove Dup folder</button>
+                <div id='filename__example'>Example:</div>
+                <div id='filename__example_dyn'></div>
+                <!-- need text and a button here to delete the dupe folder -->
+               
+            </div>
+           
+
+
+        </div>
+        <div id="dropzone" class='horizontalScroller'>
+
+            <div class='dropzone__container' id='dropzone__e'>
+                
+                <img class='dropzone_img' id='dropzone__img_e' src="//:0" alt="">
+                <video class='dropzone_vid' id='dropzone__vid_e' src="//:0" alt=""></video>
+                <div class="dropzone__size" id="dropzone__size_e"></div>
+            </div>
+            <div class='dropzone__container' id='dropzone__l'>
+                
+                <img class='dropzone_img' id='dropzone__img_l' src="//:0" alt="">
+                <video class='dropzone_vid' id='dropzone__vid_l' src="//:0" alt=""></video>
+                <div class="dropzone__size" id="dropzone__size_l"></div>
+            </div>
+            <div class='dropzone__container' id='dropzone__p'>
+                
+                <img class='dropzone_img' id='dropzone__img_p' src="//:0" alt="">
+                <video class='dropzone_vid' id='dropzone__vid_p' src="//:0" alt=""></video>
+                <div class="dropzone__size" id="dropzone__size_p"></div>
+            </div>
+
+        </div>
+       
+    </div>
+    <div id="statusHolder">
+        <div id='statusHolder__statusContainer'>
+           
+            <div id=statusHolder__statusContainerL></div>
+            <div id=statusHolder__statusContainerR></div>
+
+        </div>
+        
+        <div id="statusHolder__checksContainer"></div>
+        <button id='goButton'>GO!</button>
+    </div>
+    
+    <div id="footer"></div>
+
+    <script type='module' src='./assets/js/index.js'></script>
+    
+  
+</body>
+
+</html>

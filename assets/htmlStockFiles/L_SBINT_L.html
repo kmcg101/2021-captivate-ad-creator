@@ -1,0 +1,71 @@
+<!-- The DOCTYPE, html, and body tags are all unnecessary. They won't hurt to be left in, but they won't be used in the ad display. -->
+<!DOCTYPE html>
+<html>
+<body>
+<!-- The app will be looking to grab an element with the class name "ad-sponsor". Everything inside that element will be played as the ad. -->
+<!-- The "data-widget-id" is a unique identifier we use so that we don't implement a script or a style tag more than once. -->
+<!-- The "data-version" is a version that is not used in code. It is only used as a way for humans to track versions and changes to files. -->
+<div class="ad-sponsor sourceXXX" data-widget-id="sourceXXX" data-version="0.1.1">
+    <!-- any styling will need to be done in a style tag, instead of outside in a separate .css file. -->
+    <style>
+		.sourceXXX.ad-sponsor
+		{
+			/* cover the left hand widget */
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			margin: 0px;
+			width: 270px;
+			height:720px;
+			z-index: 16; /* widget is z-index of 15 */
+		}
+
+		.sourceXXX .ch-banner
+		{
+			position: absolute;
+			top: 0px;
+			left: 3px;
+			margin: 0px;
+		}
+		
+		.portrait .sourceXXX .ch-banner
+		{
+			position: absolute;
+			top: -34px;
+			left: -21px;
+			transform: scale(.77);
+		}
+		
+		
+		
+	</style>
+
+    <img id='sourceXXX_img' class="ch-banner" src="/advertising/sourceXXX_image.sourceMediaExtL" alt="BINT">
+	
+    <!-- any code that needs to run should be done in an inline script tag. The bare minimum will be a constructor and an init function, one of which should replace any element sources -->
+    <script>
+        //as a workaround to a javascript limitation, we need to set a global variable to the class that we want to implement. We use the same name as the class, just so there is no confusion.
+        //The standard template implementation we have built expects an object named "AdSponsor" for all Ad Sponsor ads.
+        common.methods.registerAdScript("sourceXXX",
+            class extends baseAdTemplate {
+                //the constructor allows you to do any procedural code, and should mainly be used for setup.
+                //things like setting object-level properties (or replacing all of your image calls) can be done here.
+                constructor(parentElement) {
+                    super(parentElement);
+                }
+
+				//this is where it is possible to overwirte default methods init and playcontent
+				playContent(){
+                    if (common.displayService && common.displayService.isPortrait()) {
+                       
+                    }
+                    
+                   
+				}
+
+            }
+        );
+    </script>
+</div>
+</body>
+</html>

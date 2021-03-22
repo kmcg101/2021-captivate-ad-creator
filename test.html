@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .kid {
+            pointer-events: none;
+            width: 30px;
+            height: 30px;
+            margin: 5px;
+            background-color: blue;
+        }
+
+        .drop__container {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <button class='myButton'>a</button>
+    <button class='myButton'>b</button>
+    <button class='myButton'>b</button>
+
+    <div class="drop__container" id='cont1'>
+        <div class='kid' id="child1"></div>
+        <div class='kid' id="child2"></div>
+        <div class='kid' id="child3"></div>
+    </div>
+    <div class="drop__container" id='cont2'>
+        <div class='kid' id="child5"></div>
+        <div class='kid' id="child6"></div>
+        <div class='kid' id="child7"></div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        document.querySelectorAll(".myButton").forEach(item => {
+            item.addEventListener('click', event => {
+
+                console.log("this is it " + event.target)
+            })
+        })
+        // document.querySelectorAll(".drop__container").forEach(item => {
+        //     item.addEventListener('click', event => {
+        //         event.stopPropagation();
+        //         event.preventDefault();
+        //         console.log("this is it " + event.target.id)
+        //     })
+        // })
+
+        var cont = document.getElementById('cont1');
+        $('#cont1').on('click', e => {
+            if (e.target == this)
+                return;
+
+            console.log("this is it " + e.target.id)
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>

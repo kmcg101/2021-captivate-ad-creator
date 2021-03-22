@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<body class="adbodystyle">
+    <div class="ad-sponsor sourceXXX" data-widget-id="sourceXXX" data-version="0.1.5">
+        <style>
+            /* this is the size of the entire ad */
+            .landscape .sourceXXX {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                z-index: 14;
+                width: 1010px;
+                height: 720px;
+            }
+
+            .portrait .sourceXXX {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                z-index: 14;
+                width: 768px;
+                height: 945px;
+            }
+
+            /* all images will stretch to max size without changing h/w ratio */
+            .sourceXXX .media {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                display: none;
+            }
+
+            /* all media frames */
+            .sourceXXX .media_frame {
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                background-color: black;
+            }
+
+            /* each ad gets a landscape and portrait media frame
+            /* media frame is size of image area */
+            /* landscape fsa media frame */
+
+            .landscape .sourceXXX .media_frame {
+                width: 1010px;
+                height: 568px;
+            }
+
+            /* portrait fsa media frame */
+            .portrait .sourceXXX .media_frame {
+                width: 768px;
+                height: 944px;
+            }
+        </style>
+
+        <div class='media_frame'>
+            <img id="media_image_l" class="media" src="/advertising/sourceXXX_l_image.sourceMediaExtL">
+            <img id="media_image_p" class="media" src="/advertising/sourceXXX_p_image.sourceMediaExtL">
+        </div>
+
+
+
+
+        <script>
+
+            common.methods.registerAdScript("sourceXXX",
+                class extends baseAdTemplate {
+                    constructor(parentElement) {
+                        super(parentElement);
+                    }
+
+                    playContent() {
+
+
+                        var myThis = this;
+
+                        if ((common.global.DWM_MessageType == 5) && (common.global.DWM_Enabled == 1)) {
+
+                            // hide ad if the alert window is showing
+                            let hideElement = this.scheduleItem.template.element.querySelector(".ad-sponsor");
+                            if (hideElement) {
+                                // promoteElement.style.zIndex = "15";
+                                hideElement.style.display = "none";
+
+                            }
+                        }
+                        if (common.displayService && common.displayService.isPortrait()) {
+
+                            hideIt('.widget-wrapper');
+                            hideIt('.layer-2');
+                            hideIt('#SLIDE');
+                            showIt('#media_image_l');
+
+                             let img_p = this.element.querySelector('[data-slot-id="' + this._slot + '"] #media_image_p');
+                                img_p.style.display = "block";
+                               
+
+                            let widgetLayer3 = this.scheduleItem.template.element.querySelector(".layer-3");
+                            if (widgetLayer3) {
+                                widgetLayer3.style.top = "0px";
+                            }
+
+
+                        }
+                        else {
+                            showIt('#media_image_l')
+
+                             let img_l = this.element.querySelector('[data-slot-id="' + this._slot + '"] #media_image_l');
+                                img_l.style.display = "block";
+                               
+                        }
+
+                        function hideIt(elem) {
+                            let elemToBeHidden = myThis.scheduleItem.template.element.querySelector(elem);
+                            if (elemToBeHidden) {
+                                elemToBeHidden.style.display = "none";
+                            }
+                        }
+                        function showIt(elem) {
+                            let elemToBeShown = myThis.scheduleItem.template.element.querySelector(elem);
+                            if (elemToBeShown) {
+                                elemToBeShown.style.display = "block";
+                            }
+                        }
+
+                    }
+                });
+        </script>
+    </div>
+</body>
+
+</html>
