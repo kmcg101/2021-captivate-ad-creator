@@ -30,6 +30,7 @@ git remote add origin https://github.com/kmcg101/2021-captivate-ad-creator.git
 
 // push to current branch
 git push 
+git push -u origin main
 
 */
 
